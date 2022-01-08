@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="572" pageHeight="375" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#73B0E6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="empre.nombre" class="java.lang.String"/>
+	<parameter name="empre.domicilio" class="java.lang.String"/>
+	<parameter name="empre.rfc" class="java.lang.String"/>
+	<parameter name="emple.nombre" class="java.lang.String"/>
+	<parameter name="emple.codigo" class="java.lang.String"/>
+	<parameter name="emple.categoria" class="java.lang.String"/>
+	<parameter name="emple.matricula" class="java.lang.String"/>
+	<parameter name="emple.rfc" class="java.lang.String"/>
+	<parameter name="emple.imss" class="java.lang.String"/>
+	<parameter name="emple.periodo" class="java.lang.String"/>
+	<parameter name="emple.tarifa" class="java.lang.String"/>
+	<parameter name="emple.todias" class="java.lang.String"/>
+	<parameter name="emple.puesto" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.Object"/>
+	<parameter name="sub.devengos" class="java.lang.String"/>
+	<parameter name="sub.deduc" class="java.lang.String"/>
+	<parameter name="sub.total" class="java.lang.String"/>
+	<parameter name="firma" class="java.lang.String"/>
+	<field name="COLUMN_0" class="java.lang.String"/>
+	<field name="COLUMN_1" class="java.lang.String"/>
+	<field name="COLUMN_2" class="java.lang.String"/>
+	<field name="COLUMN_3" class="java.lang.String"/>
+	<field name="COLUMN_4" class="java.lang.String"/>
+	<variable name="variable1" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="123" y="3" width="449" height="32" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="20"/>
+				</textElement>
+				<text><![CDATA[RECIBO DE NOMINA]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="423" y="35" width="144" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement mode="Opaque" x="23" y="3" width="81" height="50" forecolor="#FFFFFF"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="208" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[EMPRESA O RAZON SOCIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="208" y="0" width="208" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DOMICILIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="416" y="0" width="156" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RFC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="35" width="248" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TRABAJADOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="250" y="35" width="45" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="416" y="35" width="158" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RFC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="70" width="170" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NO.AFILIACION IMSS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="170" y="70" width="139" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PERIODO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="309" y="70" width="66" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TARIFA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="375" y="70" width="76" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TOT.DIAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="295" y="35" width="121" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PUESTO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="208" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{empre.nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="209" y="20" width="207" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{empre.domicilio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="20" width="156" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{empre.rfc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="55" width="249" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{emple.nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="55" width="44" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{emple.codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="55" width="156" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{emple.rfc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="90" width="170" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{emple.imss}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="90" width="139" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{emple.periodo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="90" width="66" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{emple.tarifa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="90" width="76" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{emple.todias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="55" width="121" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{emple.puesto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="105" width="572" height="2"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="55" y="2" width="100" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[CONCEPTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="155" y="2" width="100" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="255" y="2" width="100" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="355" y="2" width="100" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[PERCEPCIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="455" y="2" width="100" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[DEDUCCIONES]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement style="Row" x="55" y="0" width="100" height="15"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_0}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Row" x="155" y="0" width="100" height="15"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Row" x="255" y="0" width="100" height="15"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Row" x="355" y="0" width="100" height="15"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Row" x="455" y="0" width="100" height="15"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_4}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="71" splitType="Stretch">
+			<line>
+				<reportElement x="401" y="50" width="160" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="470" y="51" width="37" height="20"/>
+				<textElement/>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="0" width="58" height="14"/>
+				<textElement/>
+				<text><![CDATA[Sub. Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="355" y="0" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{sub.devengos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{sub.deduc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="365" y="14" width="42" height="16"/>
+				<textElement/>
+				<text><![CDATA[TOTAL :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="14" width="100" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{sub.total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="14" width="329" height="57"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{firma}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="12" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="17" splitType="Stretch"/>
+	</summary>
+</jasperReport>
